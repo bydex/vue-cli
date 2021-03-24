@@ -1,0 +1,84 @@
+@mixin grid() {
+    &__container {
+        @include container-media();
+    }
+    &__row {
+        @include row-flex();
+    }
+}
+
+
+@mixin h1() {
+    @media (max-width: $break_sm) {
+        font-size: rem(32);
+    }
+    @media (max-width: $break_lg) {
+        font-size: rem(40);
+    }
+    @media (max-width: $break_xl) {
+        font-size: rem(48);
+    }
+    font-size: rem(56);
+    line-height: 107%;
+    letter-spacing: 0.03em;
+}
+@mixin h2() {
+    @media (max-width: $break_sm) {
+        font-size: rem(28);
+    }
+    @media (max-width: $break_lg) {
+        font-size: rem(32);
+    }
+    @media (max-width: $break_xl) {
+        font-size: rem(40);
+    }
+    font-size: rem(44);
+    line-height: 125%;
+    letter-spacing: 0.03em;
+}
+@mixin h3() {
+    @media (max-width: $break_sm) {
+        font-size: rem(24);
+    }
+    @media (max-width: $break_lg) {
+        font-size: rem(26);
+    }
+    @media (max-width: $break_xl) {
+        font-size: rem(28);
+    }
+    font-size: rem(30);
+    line-height: 123%;
+}
+
+@mixin p() {
+    font-family: $font-beta;
+    line-height: 167%;
+}
+@mixin p-size() {
+    font-size: rem(18);
+}
+
+
+@mixin container-media() {
+    @media (max-width: $break_xl) {
+        max-width: 100%;
+    }
+    @include container();
+}
+
+
+@mixin section($pos) {
+    @media (max-width: $break_xs) {
+        padding-#{$pos}: 56px;
+    }
+    @media (max-width: $break_sm) {
+        padding-#{$pos}: 64px;
+    }
+    @media (max-width: $break_lg) {
+        padding-#{$pos}: 80px;
+    }
+    @media (max-width: $break_xl) {
+        padding-#{$pos}: 100px;
+    }
+    padding-#{$pos}: 120px;
+}
